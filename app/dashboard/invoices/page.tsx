@@ -27,6 +27,7 @@ export default async function Page({
                 <Search placeholder="Search invoices..." />
                 <CreateInvoice />
             </div>
+            {/* se puede poner suspense aqui */}
             <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
                 <Table query={query} currentPage={currentPage} />
             </Suspense>
