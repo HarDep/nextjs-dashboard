@@ -216,3 +216,27 @@ export function InvoicesTableSkeleton() {
     </div>
   );
 }
+
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+
+export function PaginationSkeleton() {
+  return (
+    <div className="mt-5 flex w-full justify-center">
+      <div className="inline-flex">
+        <div className="flex h-10 w-10 items-center justify-center rounded-md border mr-2 md:mr-4 bg-gray-100">
+          <ArrowLeftIcon className="w-4 text-gray-300" />
+        </div>
+        <div className="flex -space-x-px">
+
+          <div className="flex h-10 w-10 items-center justify-center text-sm border rounded-l-md text-gray-300 bg-gray-100">1</div>
+          <div className="flex h-10 w-10 items-center justify-center text-sm border text-gray-300 bg-gray-100">2</div>
+          <div className="flex h-10 w-10 items-center justify-center text-sm border rounded-r-md text-gray-300 bg-gray-100">3</div>
+
+        </div>
+        <div className="flex h-10 w-10 items-center justify-center rounded-md border ml-2 md:ml-4 bg-gray-100">
+          <ArrowRightIcon className="w-4 text-gray-300" />
+        </div>
+      </div>
+    </div>
+  )
+}
