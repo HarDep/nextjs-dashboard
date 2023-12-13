@@ -26,10 +26,9 @@ export default async function Page({ searchParams }: { searchParams?: { query?: 
                 <Search placeholder="Search invoices..." />
                 <CreateInvoice />
             </div>
-            <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
+            {/* key en suspense hace que cuando el key cambia va a realizar el suspense otra vez */}
+            <Suspense key={query + currentPage} fallback={<><InvoicesTableSkeleton /><PaginationSkeleton /></>}>
                 <Table query={query} currentPage={currentPage} />
-            </Suspense>
-            <Suspense fallback={<PaginationSkeleton></PaginationSkeleton>}>
                 <PaginationContainer query={query} ></PaginationContainer>
             </Suspense>
             {/* <div className="mt-5 flex w-full justify-center">
